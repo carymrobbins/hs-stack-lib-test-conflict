@@ -1,0 +1,26 @@
+name:                hs-stack-lib-test-conflict-core
+version:             0.0.0.0
+github:              "carymrobbins/hs-stack-lib-test-conflict"
+license:             BSD3
+author:              "Cary Robbins"
+maintainer:          "carymrobbins@gmail.com"
+copyright:           "2019 Cary Robbins"
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+tests:
+  hs-stack-lib-test-conflict-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hs-stack-lib-test-conflict-core
+    - hs-stack-lib-test-conflict-testlib
+    - QuickCheck
